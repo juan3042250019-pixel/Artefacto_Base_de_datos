@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefacto de Bases de Datos</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            /* Oculta la barra de scroll horizontal por si acaso */
+            overflow-x: hidden;
+        }
+
+        /* 1. EL TRUCO DEL FONDO ANIMADO */
+        .video-fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            /* Ocupa el 100% del ancho de la pantalla */
+            height: 100vh;
+            /* Ocupa el 100% del alto de la pantalla */
+            object-fit: cover;
+            /* ¡Esta es la clave para que NO se estire! */
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+
+        /* 2. DISEÑO DE LAS SECCIONES */
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pantalla {
+            min-height: 100vh;
+            /* Cada sección ocupa toda la pantalla */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 3. EFECTO CRISTAL (GLASSMORPHISM) PARA EL TEXTO */
+        .tarjeta-cristal {
+            background: rgba(255, 255, 255, 0.05);
+            /* Transparente */
+            backdrop-filter: blur(10px);
+            /* Desenfoque del fondo */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 60px;
+            border-radius: 20px;
+            max-width: 800px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            /* Animación de entrada suave */
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta-cristal:hover {
+            transform: translateY(-5px);
+            /* Pequeño salto al pasar el mouse */
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #00d2ff;
+            /* Azul neón para bases de datos */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        /* Ocultar en Chrome, Safari, Opera y derivados */
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar,
+        *::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        /* Ocultar en Firefox y Edge */
+        html,
+        body,
+        * {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EL VIDEO ANIMADO DE FONDO -->
+    <!-- autoplay: inicia solo | loop: se repite infinito | muted: sin sonido (obligatorio para que inicie solo) -->
+    <video autoplay loop muted playsinline class="video-fondo">
+        <!-- Puse un video de nodos y conexiones de prueba. -->
+        <source src="video_fondo.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+
+    <!-- EL CONTENIDO QUE SE DESLIZA (SCROLL) -->
+    <div class="contenedor">
+
+        <!-- Sección 1: Título -->
+        <div class="pantalla">
+            <div class="tarjeta-cristal">
+                <h1>Bases de Datos</h1>
+                <p style="font-size: 1.5rem;">Mi Artefacto de Aprendizaje</p>
+                <p style="font-size: 0.9rem; margin-top: 30px; opacity: 0.7;">(Desliza hacia abajo 👇)</p>
+            </div>
+        </div>
+
+        <!-- Sección 2: Qué aprendí -->
+        <div class="pantalla">
+            <div class="tarjeta-cristal">
+                <h2>¿Qué aprendí esta?</h2>
+                <p>Lo que aprendi fue sobre los tipos de base datos la cual exiten las base de datos relacionales y no
+                    relacionales
+                    y aunque solo vimos teorio me ayudo a entender las diferencias claves de cada uno donde una base de
+                    datos relacional
+                    es donde las diferentes tablas se relacionan con otras mediante llaves foraneas y que las no
+                    relacionales agarran
+                    todos los datos de una sin clasificarlos donde no exiten sepracion por tabla si no que es una misma
+                    con toda
+                    la informacion al igual que aprendi sobre los diferentes tipos de gestores que podemos llegar a usar
+                    para cada
+                    diferente situacion y que gestor de base de datos de oracle es el mejor pero que tiene un costo
+                    elevado y el
+                    postgreSQL es accesible ya que nos ayuda a entender mejor el manejo de las base de datos de forma
+                    manual donde en
+                    oracle es mas sencillo y rapido al igual que me ayudo a recordar fundamentos basicos de base de
+                    datos y sus relaciones.</p>
+            </div>
+        </div>
+
+        <!-- Sección 3: Qué quiero reforzar -->
+        <div class="pantalla">
+            <div class="tarjeta-cristal">
+                <h2>¿Qué quiero reforzar?</h2>
+                <p>Lo que me gustaria reforzar y aprender en este cuatrimestre y las unidades que siguen es como
+                    estructurar de manera correcta una base de datos
+                    apartir de cierta informacion que nos proporcione al igual algo que me confundio y quisiera aprender
+                    es como se migran base de datos extremadamente
+                    grandes a otras pero en conclusion me gustaria reforzar el como estructurar bien una base de datos
+                    desde cero dependiendo de la informacion que nos otorguen al igual
+                    que aprender como funcionan las relaciones en base de datos grandes donde puede haber
+                    modificaciones, el saber como se puede realizar modificaciones si afectar registros
+                    y por ultimo el como se migra base de datos grandes y con que finalidad. </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
